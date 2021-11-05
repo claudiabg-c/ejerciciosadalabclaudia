@@ -1,0 +1,19 @@
+aside.text-link {
+  color: red;
+}
+
+html {
+  background-color: mediumpurple;
+}
+
+body {
+  color: rebeccapurple;
+  font-family: tahoma;
+  font-size: 18px;
+  text-align: justify;
+  line-height: 1.5;
+}
+
+.link {
+  color: red;
+}
