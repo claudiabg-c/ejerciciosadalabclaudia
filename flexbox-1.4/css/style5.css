@@ -1,0 +1,17 @@
+section {
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  background-color: thistle;
+}
+
+main {
+  background-color: grey;
+  min-height: 1000px;
+}
+
+footer {
+  background-color: yellow;
+}
