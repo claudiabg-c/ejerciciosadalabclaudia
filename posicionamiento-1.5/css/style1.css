@@ -1,0 +1,90 @@
+body {
+  font-family: sans-serif;
+}
+
+header {
+  background: purple;
+  display: block;
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+}
+
+.purpleheader {
+  list-style: none;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin: 20px;
+  color: aliceblue;
+}
+
+main {
+  position: relative;
+  top: 60px;
+  padding: 30px;
+  max-width: 600px;
+
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 150px;
+}
+
+h2 {
+  margin-bottom: 30px;
+}
+
+.codes {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-bottom: 15px;
+  gap: 15px;
+}
+
+div {
+  text-decoration: underline 1.5px solid purple;
+  cursor: help;
+  color: purple;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tiptext {
+  visibility: hidden;
+  width: 400px;
+  height: 200px;
+  background-color: white;
+  color: black;
+  text-align: center;
+  border-radius: 13px;
+  padding: 16px;
+  position: absolute;
+  margin-left: 100px;
+  z-index: 1;
+  box-shadow: 5px 10px 20px goldenrod;
+}
+
+.tooltip:hover .tiptext {
+  visibility: visible;
+}
+
+footer {
+  background: rgb(243, 221, 96);
+  position: fixed;
+  bottom: 0;
+  display: block;
+  width: 100%;
+  height: 100px;
+}
+
+.cookies {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}

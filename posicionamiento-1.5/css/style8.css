@@ -1,0 +1,16 @@
+div {
+  display: flex;
+  justify-content: space-between;
+  margin: 30px;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  align-content: center;
+}
+
+img {
+  height: 30px;
+}
+
+a {
+  color: grey;
+}

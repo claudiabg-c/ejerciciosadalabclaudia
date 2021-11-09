@@ -1,0 +1,36 @@
+.div1 {
+  background-color: gold;
+  height: 500px;
+  width: 500px;
+  position: absolute;
+  padding: 40px;
+  border: 2px solid goldenrod;
+  box-sizing: border-box;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.div2 {
+  background-color: lightgreen;
+  height: 300px;
+  width: 300px;
+  position: absolute;
+  padding: 75px;
+  box-sizing: border-box;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.div3 {
+  background-color: lightseagreen;
+  height: 150px;
+  width: 150px;
+  position: absolute;
+  border: 20px dotted cyan;
+  box-sizing: border-box;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}

@@ -1,0 +1,36 @@
+/* .madre {
+  background-image: url(https://previews.123rf.com/images/bobrovee/bobrovee1605/bobrovee160500182/57089919-cuadr%C3%ADcula-de-cinco-mil%C3%ADmetros-cian-en-la-hoja-de-tama%C3%B1o-a4-horizontal.jpg);
+} */
+
+.div1 {
+  background-color: lightgreen;
+  height: 300px;
+  width: 300px;
+  margin: 40px;
+  padding: 30px;
+  position: relative;
+  top: 50px;
+  left: 100px;
+}
+
+.div2 {
+  background-color: goldenrod;
+  height: 300px;
+  width: 300px;
+  margin: 40px;
+  padding: 30px;
+  position: relative;
+  bottom: 320px;
+  right: 150px;
+}
+
+.div3 {
+  background-color: lightseagreen;
+  height: 300px;
+  width: 300px;
+  margin: 40px;
+  padding: 30px;
+  position: relative;
+  bottom: 240px;
+  left: 180px;
+}
