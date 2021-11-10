@@ -10,7 +10,7 @@ header {
   z-index: 100;
 }
 
-.purpleheader {
+.headertext {
   list-style: none;
   width: 100%;
   display: flex;
@@ -25,7 +25,6 @@ main {
   top: 60px;
   padding: 30px;
   max-width: 600px;
-
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 150px;
@@ -44,10 +43,11 @@ h2 {
   gap: 15px;
 }
 
-div {
+div .tooltip {
   text-decoration: underline 1.5px solid purple;
   cursor: help;
   color: purple;
+  width: fit-content;
 }
 
 .tooltip {

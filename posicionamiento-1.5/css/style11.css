@@ -1,0 +1,49 @@
+body {
+  font-family: sans-serif;
+}
+
+header {
+  background: lightseagreen;
+  display: block;
+  position: sticky;
+  width: 100%;
+  z-index: 100;
+  top: 0;
+}
+
+h1 {
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  color: lavender;
+}
+
+main {
+  position: relative;
+  padding: 30px;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 50px;
+}
+
+.company {
+  background: cornflowerblue;
+  bottom: 0px;
+  display: inline-block;
+  width: 100%;
+  height: 50px;
+  padding-left: 12px;
+}
+
+.cookies {
+  background-color: lightgreen;
+  display: block;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 300px;
+  padding: 12px;
+  border-radius: 10px;
+}
