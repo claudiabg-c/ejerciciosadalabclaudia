@@ -1,0 +1,64 @@
+:root {
+  font-size: 10px;
+}
+
+html {
+  background-color: tomato;
+}
+
+article {
+  color: rgb(80, 77, 77);
+  text-align: justify;
+}
+
+h1 {
+  font-size: 3.2rem;
+}
+
+p {
+  padding-top: 2.4rem;
+  font-size: 1.8rem;
+}
+
+.container {
+  margin: 2rem;
+}
+
+@media all and (min-width: 480px) {
+  html {
+    background-color: gold;
+  }
+}
+
+@media all and (min-width: 768px) {
+  html {
+    background-color: lightgreen;
+  }
+
+  .container {
+    margin: 3rem 4rem;
+  }
+  h1 {
+    font-size: 2.8rem;
+  }
+
+  p {
+    padding-top: 2rem;
+    font-size: 1.6rem;
+  }
+}
+
+@media all and (min-width: 1140px) {
+  .container {
+    margin: 19rem auto;
+    max-width: 75rem;
+  }
+  h1 {
+    font-size: 4.2rem;
+  }
+
+  p {
+    padding-top: 3.2rem;
+    font-size: 2.4rem;
+  }
+}
