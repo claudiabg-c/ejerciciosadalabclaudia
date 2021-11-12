@@ -104,6 +104,7 @@ footer {
     display: flex;
     flex-direction: column;
   }
+
   .mainheading {
     width: 45vw;
   }
