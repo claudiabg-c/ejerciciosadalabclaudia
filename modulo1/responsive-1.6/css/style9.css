@@ -1,0 +1,127 @@
+:root {
+  font-size: 10px;
+  margin: 2rem;
+}
+
+.whole {
+  width: auto;
+  background-color: lightgray;
+  padding-bottom: 1rem;
+}
+
+.sitename {
+  font-size: 3.2rem;
+  padding-bottom: 1.2rem;
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  background-color: greenyellow;
+}
+
+.main {
+  padding-right: 0.05rem;
+}
+
+.mainheading {
+  padding-bottom: 1rem;
+  background-color: gold;
+}
+
+.textbox {
+  background-color: gold;
+}
+
+footer {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.info {
+  background-color: grey;
+  padding-right: 0.05rem;
+  margin-top: 1rem;
+}
+
+.infotitle {
+  padding-bottom: 1.5rem;
+}
+
+.box {
+  background-color: orange;
+  display: none;
+}
+
+@media all and (min-width: 480px) {
+  .links {
+    width: 66rem;
+    margin-right: 3rem;
+    height: max-content;
+  }
+
+  .linksmain {
+    display: flex;
+  }
+
+  .main {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .maintext {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .textbox {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .text {
+    display: flex;
+    flex-direction: row;
+    width: 60%;
+    height: max-content;
+    padding-right: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  .box {
+    display: block;
+    height: 90%;
+    width: 50%;
+  }
+
+  .info {
+    margin-top: 0;
+  }
+}
+
+@media all and (min-width: 1000px) {
+  .main {
+    display: flex;
+    flex-direction: column;
+  }
+  .mainheading {
+    width: 45vw;
+  }
+
+  .maintext {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .textbox {
+    width: 45vw;
+  }
+
+  .info {
+    width: 15vw;
+    margin-left: 3rem;
+    transform: translateY(-26.5px);
+    height: max-content;
+    padding-bottom: 1rem;
+  }
+}
