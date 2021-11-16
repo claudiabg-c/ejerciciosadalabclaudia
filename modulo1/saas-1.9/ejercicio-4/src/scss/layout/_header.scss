@@ -1,0 +1,10 @@
+.page__header {
+  background-color: lightgreen;
+  height: 7.5rem;
+  @media all and (min-width: 768px) {
+    height: 10rem;
+  }
+  @media all and (min-width: 1280px) {
+    height: 11rem;
+  }
+}

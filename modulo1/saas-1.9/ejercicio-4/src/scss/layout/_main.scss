@@ -1,0 +1,32 @@
+.page__main {
+  & .principal {
+    background-color: lightpink;
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    & .text {
+      max-width: 30rem;
+      text-align: center;
+      font-size: 2rem;
+    }
+  }
+  & .secondary {
+    background-color: lightsalmon;
+    display: flex;
+    justify-content: space-around;
+    padding: 1rem;
+
+    & .title {
+      font-size: 3rem;
+    }
+
+    & .buttom {
+      background-color: maroon;
+      height: 4.5rem;
+      width: 4.5rem;
+      border-radius: 0.5rem;
+    }
+  }
+}
