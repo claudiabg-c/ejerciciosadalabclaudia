@@ -1,1 +1,1 @@
-*{margin:0;padding:0}.main__list{padding-left:2rem;padding-bottom:20px}
+.title{font-size:16px;background-color:lightgreen}@media (min-width: 768px){.title{background-color:lightpink;font-size:18px}}@media (min-width: 1000px){.title{background-color:gold;font-size:20px}}
