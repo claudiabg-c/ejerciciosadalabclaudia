@@ -1,0 +1,26 @@
+@mixin tablet {
+  background-color: lightpink;
+  @content;
+}
+
+@mixin desktop {
+  background-color: gold;
+  @content;
+}
+
+.title {
+  font-size: 16px;
+  background-color: lightgreen;
+
+  @media (min-width: 768px) {
+    @include tablet {
+      font-size: 18px;
+    }
+  }
+
+  @media (min-width: 1000px) {
+    @include desktop {
+      font-size: 20px;
+    }
+  }
+}
