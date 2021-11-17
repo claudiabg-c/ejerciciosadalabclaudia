@@ -1,0 +1,53 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+@mixin cutehdr {
+  background-color: lightgreen;
+  text-decoration: none;
+  color: darkslategray;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+@mixin hdrnav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+@mixin cutebg {
+  background-color: lightpink;
+  color: darkslategray;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+@mixin cutefoot {
+  background-color: lightyellow;
+  color: gray;
+  text-align: end;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+main {
+  @include cutebg();
+}
+
+header {
+  @include cutehdr();
+}
+
+nav {
+  @include hdrnav();
+}
+
+a {
+  @include cutehdr();
+}
+
+footer {
+  @include cutefoot();
+}
