@@ -7,10 +7,12 @@ $defaultFontSize: 16;
 p {
   font-size: rem(18);
   margin: 0 rem(10);
+  background-color: lighten($color: #891234, $amount: 30%);
+  color: lighten($color: black, $amount: 20%);
 }
 
 @mixin tablet {
-  background-color: lightpink;
+  background-color: darken($color: lightpink, $amount: 20%);
   @content;
 }
 
