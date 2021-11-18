@@ -1,0 +1,51 @@
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px,
+);
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.container-fluid {
+  height: 100vh;
+}
+
+.blue {
+  background: #099d8d;
+  height: 30vh;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  font-size: smaller;
+
+  @media (min-width: 576px) {
+    font-size: small;
+
+    & h1,
+    p {
+      max-width: 50%;
+    }
+  }
+
+  @media (min-width: 992px) {
+    height: 40vh;
+    font-size: large;
+    text-align: center;
+    align-items: center;
+  }
+}
+
+div.cat {
+  padding: 0;
+
+  & img {
+    width: 100%;
+  }
+}
