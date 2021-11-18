@@ -38,7 +38,7 @@
             <input placeholder="Día" type="number" min="1" max="31" name="day" id="day" />
 
             <select name="month" required>
-              <option value="0">Mes</option>
+              <option value="0" disabled selected>Mes</option>
               <option value="1">January</option>
               <option value="2">February</option>
               <option value="3">March</option>
@@ -61,16 +61,17 @@
       <fieldset class="moredata">
         <label for="sex">Sexo</label>
         <select name="sex">
-          <option value="0">Selecciona tu género</option>
+          <option value="0" disabled selected>Selecciona tu género</option>
           <option value="male">Hombre</option>
           <option value="female">Mujer</option>
         </select>
 
         <label for="telephone">Teléfono móvil</label>
-        <input value="+34" id="telephone" type="tel" name="telephone" pattern="[0-9] {9}" required />
+        <input value="+34" id="telephone" type="tel" name="telephone" pattern="^[0-9] {9}$"
+          title="Añade el número sin el código del país" required />
         <label for="email">Tu dirección de correo electrónico actual</label>
         <input id="email" type="email" name="email"
-          pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}" required />
+          pattern="^[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}$" required />
         <label for="location">Ubicación</label>
         <select name="location">
           <option value="0">España</option>

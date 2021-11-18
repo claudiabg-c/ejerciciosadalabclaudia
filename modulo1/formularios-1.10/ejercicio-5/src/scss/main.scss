@@ -38,7 +38,7 @@ fieldset {
     display: flex;
     flex-direction: column;
 
-    & .useremail {
+    & input::placeholder {
       text-align: end;
       padding-right: 10px;
     }
