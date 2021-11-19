@@ -1,20 +1,40 @@
-.wrapper {
+.wrapper1 {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-  //   grid-template-rows: 30px 200px 80px 80px 80px 80px 80px 30px;
-  background-color: #f3f3f3;
-
-  & .item {
-    background-color: tomato;
-    border: 5px solid greenyellow;
-  }
+  grid-template-columns: 1fr;
+  grid-template-rows: 30px 250px;
+  box-shadow: 0.25px 1px 2px gray;
 
   & .item0 {
-    grid-column: 1/13;
+    grid-column: 1/2;
+    background-color: white;
+    padding: 5px;
+    font-weight: bold;
   }
 
   & .item1 {
-    grid-column: 1/13;
+    grid-column: 1/2;
+    background-image: linear-gradient(to right, #65e9ff, #54a3fe);
+    color: white;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.wrapper2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  background-color: #f3f3f3;
+  row-gap: 10px;
+  column-gap: 10px;
+  padding: 10px 15px 20px;
+  box-shadow: 0.25px 1px 2px gray;
+
+  & .item {
+    background-color: white;
+    box-shadow: 0.25px 1px 2px gray;
+    height: 100px;
   }
 
   & .item2 {
@@ -52,18 +72,29 @@
   & .item10 {
     grid-column: 7/13;
   }
+}
+
+.wrapper3 {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 30px;
+  box-shadow: 0.25px 1px 2px gray;
+  background-color: black;
 
   & .item11 {
-    grid-column: 1/13;
+    grid-column: 1/2;
+    color: white;
+    font-weight: bold;
+    padding: 5px;
   }
 }
 
 @media all and (min-width: 768px) {
-  .wrapper {
-    // grid-template-rows: 30px 200px 80px 80px 80px 80px 30px;
+  .wrapper2 {
+    padding: 30px 55px 30px;
 
     & .item {
-      background-color: purple;
+      height: 200px;
     }
 
     & .item3 {
@@ -97,19 +128,15 @@
     & .item10 {
       grid-column: 5/9;
     }
-
-    & .item11 {
-      grid-column: 1/13;
-    }
   }
 }
 
 @media all and (min-width: 1024px) {
-  .wrapper {
-    // grid-template-rows: 30px 200px 80px 80px 80px 30px;
+  .wrapper2 {
+    padding: 30px 85px 40px;
 
     & .item {
-      background-color: orange;
+      height: 250px;
     }
 
     & .item3 {

@@ -1,8 +1,4 @@
-@import 'core/variables';
-@import 'core/reset';
-@import 'components/code';
-@import 'components/links';
-@import 'layout/page';
-@import 'layout/header';
-@import 'layout/footer';
-@import 'pages/index';
+body {
+  font-family: "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
