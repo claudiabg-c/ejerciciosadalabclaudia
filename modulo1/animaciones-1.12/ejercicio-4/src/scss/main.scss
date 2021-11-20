@@ -1,0 +1,25 @@
+.popup {
+  display: flex;
+  animation-name: rotate;
+  animation-duration: 5s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  margin-top: 50vh;
+  animation-iteration-count: 1;
+
+  & h1 {
+    margin: auto;
+    font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+    font-weight: bold;
+    color: #36ad9f;
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: translateY(-60vh);
+  }
+  100% {
+    animation-play-state: paused;
+  }
+}
