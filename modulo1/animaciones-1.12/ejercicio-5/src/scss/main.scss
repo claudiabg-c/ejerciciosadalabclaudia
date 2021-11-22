@@ -55,9 +55,7 @@ input:focus {
 }
 
 .email:focus,
-.has-content.email,
-.password:focus,
-.has-content.password {
+.password:focus {
   width: 100%;
   transition: 0.4s;
 }
@@ -82,8 +80,7 @@ input:focus {
   letter-spacing: 0.5px;
 }
 
-.email:focus ~ label,
-.has-content.email ~ label {
+.email:focus ~ label {
   top: 180px;
   left: 50px;
   font-size: 12px;
@@ -91,8 +88,7 @@ input:focus {
   transition: 0.3s;
 }
 
-.password:focus ~ label,
-.has-content.password ~ label {
+.password:focus ~ label {
   top: 260px;
   left: 50px;
   font-size: 12px;
