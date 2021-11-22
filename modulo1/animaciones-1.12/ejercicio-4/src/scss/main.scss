@@ -1,11 +1,12 @@
 .popup {
   display: flex;
-  animation-name: rotate;
+  animation-name: popup;
   animation-duration: 5s;
   animation-timing-function: ease-in-out;
   animation-iteration-count: infinite;
   margin-top: 50vh;
   animation-iteration-count: 1;
+  overflow: hidden;
 
   & h1 {
     margin: auto;
@@ -15,7 +16,7 @@
   }
 }
 
-@keyframes rotate {
+@keyframes popup {
   0% {
     transform: translateY(-60vh);
   }
