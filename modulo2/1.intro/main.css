@@ -1,0 +1,19 @@
+.buttons {
+  display: flex;
+}
+
+.button1 {
+  height: 300px;
+  width: 300px;
+  background-color: greenyellow;
+}
+
+.button2 {
+  height: 300px;
+  width: 300px;
+  background-color: greenyellow;
+}
+
+.opacity {
+  opacity: 0.5;
+}
