@@ -43,10 +43,10 @@ console.log('Claudia Berrocal is ' + myName.length + ' code units long');
 
 //exercise 10
 
-// const ageUser = document.querySelector('.age');
+const ageUser = document.querySelector('.age');
 
-// console.log(ageUser);
+console.log(ageUser);
 
-// const secondHoursOfLife = parseInt(ageUser.innerHTML) * 24 * 365;
+const secondHoursOfLife = parseInt(ageUser.innerHTML) * 24 * 365;
 
-// console.log(secondHoursOfLife);
+console.log(secondHoursOfLife);
