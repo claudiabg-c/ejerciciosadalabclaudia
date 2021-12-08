@@ -2,25 +2,19 @@
 
 //exercise 1
 
-function multiplicación (num1, num2){
-    return num1*num2;
+function multiplicación (a, b){
+    return a*b;
 }
 
-const num1 = 2;
-const num2 = 4;
-
-console.log(multiplicación(num1, num2));
+console.log(multiplicación(2, 4));
 
 //exercise 2
 
-function media (num1, num2, num3, num4){
-    return (num1 + num2 + num3 +num4)/4;
+function media (a, b, c, d){
+    return (a + b + c +d)/4;
 }
 
-const num3 = 3;
-const num4 = 5;
-
-console.log(media(num1, num2, num3, num4));
+console.log(media(2, 4, 3, 5));
 
 //exercise 3
 
@@ -37,7 +31,7 @@ console.log(calcularIva(10, 21));
 //exercise 4
 
 function isPair(num){
-    if(num%2 ===0){
+    if(num % 2 === 0){
     return true;
     }
     else{
@@ -45,9 +39,9 @@ function isPair(num){
     }
 }
 
-console.log(isPair(30));
+console.log(isPair(8));
 
-//exercise 5
+//exercises 5 and 6
 
 function getEl(elementClass){
 
@@ -66,6 +60,51 @@ const elementOther = getEl('other');
 console.log(elementThing);
 console.log(elementOther);
 
-//exercise 6
+//exercise 7
 
+const numberParragraph = getEl('number').innerHTML;
 
+console.log(numberParragraph);
+
+function Pair(numberParragraph){
+    if(numberParragraph % 2 === 0){
+    return 'Este número es par';
+    }
+    else{
+    return 'Este número es impar';
+    }
+}
+
+console.log(Pair(numberParragraph));
+
+//exercise 8
+
+let secretLetter = "y";
+function mySecretLetter() {
+  secretLetter = "x";
+  return secretLetter;
+}
+
+console.log(secretLetter); 
+console.log(mySecretLetter()); 
+
+//exercise 9
+
+const multiplication = (a, b) => a*b;
+
+console.log(multiplication(3, 4));
+
+const media2 = (a, b, c, d) => (a + b + c +d)/4;
+
+console.log(media2(6, 4, 3, 5));
+
+//exercise 10
+
+function box (borderbox, width, padding, border) {
+    const boxSize = (borderbox ? width - padding * 2 - border * 2 : width);
+    const totalSize = (borderbox ? width : width + padding * 2 + border * 2);
+
+    return `El ancho del contenido es: ${boxSize} y el ancho total de la caja es: ${totalSize}`;
+}
+
+console.log(box(false, 80, 10, 5));

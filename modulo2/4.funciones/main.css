@@ -1,0 +1,8 @@
+.box {
+  box-sizing: content-box;
+  background-color: greenyellow;
+  border: 5px solid green;
+  padding: 10px;
+  width: 80px;
+  height: 80px;
+}
