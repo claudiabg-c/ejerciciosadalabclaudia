@@ -1,0 +1,29 @@
+.button {
+  background-color: lightgreen;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, san-serif;
+}
+
+.teachers {
+  list-style: none;
+  padding: 0;
+}
+
+.teacher {
+  display: inline-block;
+  cursor: pointer;
+  padding: 20px;
+}
+
+.teacher__img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+}
+
+.teacher--selected {
+  background-color: lightgreen;
+}
