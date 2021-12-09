@@ -2,3 +2,24 @@ body {
   margin: 0;
   font-family: Arial, san-serif;
 }
+
+.header {
+  position: fixed;
+  width: 100%;
+  background-color: lightgreen;
+}
+
+.list {
+  display: flex;
+  list-style: none;
+  padding: 30px;
+}
+
+.link {
+  text-decoration: none;
+  padding: 0 30px;
+}
+
+.section {
+  padding: 30px;
+}
