@@ -17,17 +17,9 @@ button2.addEventListener('click', () => console.log(`Hola ${formName.value}`));
 //exercise 3
 
 const lorem = document.querySelector('.lorem');
+const multiplier = document.querySelector('.loremmultiplier')
 
-lorem.addEventListener('mouseover', () => lorem.innerHTML = `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus beatae impedit quia blanditiis
-iste repellat,
-fugiat earum doloremque tempore quam maiores voluptate cupiditate quae praesentium provident. Expedita obcaecati
-fugit dolore?
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus beatae impedit quia blanditiis
-iste repellat,
-fugiat earum doloremque tempore quam maiores voluptate cupiditate quae praesentium provident. Expedita obcaecati
-fugit dolore?`);
-
-lorem.addEventListener('mouseout', () => lorem.innerHTML = `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus beatae impedit quia blanditiis
+lorem.addEventListener('mouseover', () => multiplier.innerHTML += `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus beatae impedit quia blanditiis
 iste repellat,
 fugiat earum doloremque tempore quam maiores voluptate cupiditate quae praesentium provident. Expedita obcaecati
 fugit dolore?`);
