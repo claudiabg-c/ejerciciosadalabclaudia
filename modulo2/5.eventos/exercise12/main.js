@@ -6,13 +6,19 @@ const selectTeacher = (event) => {
 
     event.target.classList.toggle('teacher--selected');
 
-const changeText = event.target.querySelector('.favorite');
+const favorite = event.target.querySelector('.favorite');   
+ 
+favorite.innerHTML = changeText(favorite.innerHTML);
 
-if (changeText.innerHTML === 'Quitar') {
-    changeText.innerHTML = 'Añadir';
-} else if (changeText.innerHTML === 'Añadir') {
-    changeText.innerHTML = 'Quitar';
+function changeText(text) {
+    if (text === 'Añadir') {
+        text = 'Quitar'
+    } else {
+        text = 'Añadir'
+    }
+return text;
 }
+
 };
 
 teachers.addEventListener('click', selectTeacher);
