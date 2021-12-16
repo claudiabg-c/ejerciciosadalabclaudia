@@ -73,30 +73,35 @@ const tasks = [
 const taskList = document.querySelector('.tasks');
 const title = document.querySelector('.title');
 
+
+function render() {
 for (let index = 0; index < tasks.length; index++) {
 
-    if (tasks[index].completed === true) {
-        taskList.innerHTML += `<li class="completed"><input type="checkbox" class="input" checked>${tasks[index].name}</li>`;
-    } else if 
-        (tasks[index].completed === false) {
-        taskList.innerHTML += `<li class="uncompleted"><input type="checkbox" class="input" unchecked>${tasks[index].name}</li>`;
+    if (tasks[index].completed) {
+        taskList.innerHTML += `<li class="completed" id=${tasks[index].completed}><input type="checkbox" class="input" checked>${tasks[index].name}</li>`;
+    } else {
+        taskList.innerHTML += `<li id=${tasks[index].completed}><input type="checkbox" class="input" unchecked>${tasks[index].name}</li>`;
     };
 };
 
-
-//------------------------------------------- MAL, PARA REVISAR
-
-
 const allCheckboxs = taskList.querySelectorAll('input');
 
-function checkAndUncheck() {
-    taskList.classList.toggle('completed')
-    
-};  
+console.log(allCheckboxs);
 
 for(const eachCheckbox of allCheckboxs) {
     eachCheckbox.addEventListener('click', checkAndUncheck);
 };
+
+};
+
+function checkAndUncheck(event) {
+    console.log(event.currentTarget.parentNode);
+    event.currentTarget.parentNode.classList.toggle('completed');
+    console.log(event.currentTarget.id);
+};  
+
+render();
+
 
 
 //------------------------------------------------ MAL, PARA REVISAR
@@ -106,7 +111,7 @@ function completedTasks() {
 
 for (let index = 0; index <= tasks.length; index++) {
 
-    if (tasks[index].completed === true) {
+    if (tasks[index].completed) {
         index ++;
     };
     return index;
@@ -118,14 +123,42 @@ function getDataFromTheArray(){
     
     let position = tasks.indexOf();
     
-  
-
-
     for (let index = 0; index < tasks.length; index++) {
 
-        title.innerHTML =`Tienes ${tasks.length} tareas. ${tasks[index].completed === true} completadas y ${tasks[index].completed === false} por realizar`;
+        title.innerHTML =`Tienes ${tasks.length} tareas. ${tasks[index].completed} completadas y ${tasks[index].completed === false} por realizar`;
     }
 };
 
 getDataFromTheArray();
 
+
+//exercise 5
+
+const tree = [
+'▲',
+'▲▲',
+'▲▲▲',
+'▲▲▲▲',
+'▲▲▲▲▲'
+];
+
+for (const treeParts of tree) {
+    console.log(treeParts);
+}
+
+//exercise 6
+
+tree.unshift('★');
+tree.push('|');
+
+for (const treeParts of tree) {
+    console.log(treeParts);
+}
+
+//exercise 7
+
+const wholeTree = tree.splice(0, 7, '     ★','     ▲', '    ▲▲▲', '   ▲▲▲▲▲', '  ▲▲▲▲▲▲▲', ' ▲▲▲▲▲▲▲▲▲', '     |');
+
+ for (const treeParts of tree) {
+    console.log(treeParts);
+};
