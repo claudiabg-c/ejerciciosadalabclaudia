@@ -1,27 +1,26 @@
-'use strict';
+"use strict";
 
 //exercise 1
 
 const numbers1to100 = [];
 
 function get100Numbers() {
-    let addNumbers = 0;
+  let addNumbers = 0;
 
-    for (let numbers = 1; numbers <= 100; numbers++) {
+  for (let numbers = 1; numbers <= 100; numbers++) {
     addNumbers = numbers1to100.push(numbers);
-    }
-    
-    console.log(numbers1to100);
-};
+  }
+
+  console.log(numbers1to100);
+}
 
 get100Numbers();
-
 
 //exercise 2
 
 function getReversed100Numbers() {
-    console.log(numbers1to100.reverse());
-};
+  console.log(numbers1to100.reverse());
+}
 
 getReversed100Numbers();
 
@@ -32,133 +31,134 @@ const pairNumbers = [];
 const multipleOfThree = [];
 
 function bestLostNumber() {
-    
-    let addPairs;
-    for (let index = 0; index < lostNumbers.length; index++) {
-
-        if (lostNumbers[index] % 2 === 0) {
-        addPairs = pairNumbers.push(lostNumbers[index]);
-        };
+  let addPairs;
+  for (let index = 0; index < lostNumbers.length; index++) {
+    if (lostNumbers[index] % 2 === 0) {
+      addPairs = pairNumbers.push(lostNumbers[index]);
     }
+  }
 
-    let multiplesOf3;
-    for (let index = 0; index < lostNumbers.length; index++) {
+  let multiplesOf3;
+  for (let index = 0; index < lostNumbers.length; index++) {
+    if (lostNumbers[index] % 3 === 0) {
+      multiplesOf3 = multipleOfThree.push(lostNumbers[index]);
+    }
+  }
 
-        if (lostNumbers[index] % 3 === 0) {
-        multiplesOf3 = multipleOfThree.push(lostNumbers[index]);
-        };
-    };
+  const bestOfThemAll = pairNumbers.concat(multipleOfThree);
 
-    const bestOfThemAll = pairNumbers.concat(multipleOfThree);
-
-    console.log(pairNumbers);
-    console.log(multipleOfThree);
-    console.log(bestOfThemAll);
-};
+  console.log(pairNumbers);
+  console.log(multipleOfThree);
+  console.log(bestOfThemAll);
+}
 
 bestLostNumber();
 
-//exercise 4 --------------- INCOMPLETO
+//exercise 4
 
 const tasks = [
-    { name: 'Recoger setas en el campo', completed: true },
-    { name: 'Comprar pilas', completed: true },
-    { name: 'Poner una lavadora de blancos', completed: true },
-    {
-      name: 'Aprender cómo se realizan las peticiones al servidor en JavaScript',
-      completed: false
-    }
+  { name: "Recoger setas en el campo", completed: true },
+  { name: "Comprar pilas", completed: true },
+  { name: "Poner una lavadora de blancos", completed: true },
+  {
+    name: "Aprender cómo se realizan las peticiones al servidor en JavaScript",
+    completed: false,
+  },
 ];
 
-const taskList = document.querySelector('.tasks');
-const title = document.querySelector('.title');
-
+const taskList = document.querySelector(".tasks");
+const title = document.querySelector(".title");
 
 function render() {
-for (let index = 0; index < tasks.length; index++) {
+  taskList.innerHTML = "";
 
+  for (let index = 0; index < tasks.length; index++) {
     if (tasks[index].completed) {
-        taskList.innerHTML += `<li class="completed" id=${tasks[index].completed}><input type="checkbox" class="input" checked>${tasks[index].name}</li>`;
+      taskList.innerHTML += `<li class="completed"><input type="checkbox" class="input" id=${index} checked>${tasks[index].name}</li>`;
     } else {
-        taskList.innerHTML += `<li id=${tasks[index].completed}><input type="checkbox" class="input" unchecked>${tasks[index].name}</li>`;
-    };
-};
+      taskList.innerHTML += `<li><input type="checkbox" class="input" id=${index} unchecked>${tasks[index].name}</li>`;
+    }
+  }
+  const allCheckboxs = document.querySelectorAll(".input");
 
-const allCheckboxs = taskList.querySelectorAll('input');
+  for (const eachCheckbox of allCheckboxs) {
+    eachCheckbox.addEventListener("click", checkAndUncheck);
+  }
+}
 
-console.log(allCheckboxs);
+function completedTasks() {
+  let completedEvent = 0;
+  let uncompletedEvent = 0;
+  for (let index = 0; index < tasks.length; index++) {
+    if (tasks[index].completed === true) {
+      completedEvent++;
+    } else {
+      uncompletedEvent++;
+    }
+  }
 
-for(const eachCheckbox of allCheckboxs) {
-    eachCheckbox.addEventListener('click', checkAndUncheck);
-};
+  const completed = completedEvent;
+  const uncompleted = uncompletedEvent;
 
-};
+  function getDataFromTheArray() {
+    for (let index = 0; index < tasks.length; index++) {
+      title.innerHTML = `Tienes 
+    ${tasks.length} tareas. ${completed} completadas y 
+    ${uncompleted} por realizar`;
+    }
+  }
+
+  getDataFromTheArray();
+}
 
 function checkAndUncheck(event) {
-    console.log(event.currentTarget.parentNode);
-    event.currentTarget.parentNode.classList.toggle('completed');
-    console.log(event.currentTarget.id);
-};  
+  const positionTask = event.currentTarget.id;
+  if (tasks[positionTask].completed) {
+    tasks[positionTask].completed = false;
+  } else {
+    tasks[positionTask].completed = true;
+  }
+
+  render();
+
+  completedTasks();
+}
+
+completedTasks();
 
 render();
 
-
-
-//------------------------------------------------ MAL, PARA REVISAR
-
-
-function completedTasks() {
-
-for (let index = 0; index <= tasks.length; index++) {
-
-    if (tasks[index].completed) {
-        index ++;
-    };
-    return index;
-};
-};
-console.log(completedTasks());
-
-function getDataFromTheArray(){
-    
-    let position = tasks.indexOf();
-    
-    for (let index = 0; index < tasks.length; index++) {
-
-        title.innerHTML =`Tienes ${tasks.length} tareas. ${tasks[index].completed} completadas y ${tasks[index].completed === false} por realizar`;
-    }
-};
-
-getDataFromTheArray();
-
-
 //exercise 5
 
-const tree = [
-'▲',
-'▲▲',
-'▲▲▲',
-'▲▲▲▲',
-'▲▲▲▲▲'
-];
+const tree = ["▲", "▲▲", "▲▲▲", "▲▲▲▲", "▲▲▲▲▲"];
 
 for (const treeParts of tree) {
-    console.log(treeParts);
+  console.log(treeParts);
 }
 
 //exercise 6
 
-tree.unshift('★');
-tree.push('|');
+tree.unshift("★");
+tree.push("|");
 
 for (const treeParts of tree) {
-    console.log(treeParts);
+  console.log(treeParts);
 }
 
 //exercise 7
 
-const wholeTree = tree.splice(0, 7, '     ★','     ▲', '    ▲▲▲', '   ▲▲▲▲▲', '  ▲▲▲▲▲▲▲', ' ▲▲▲▲▲▲▲▲▲', '     |');
+const wholeTree = tree.splice(
+  0,
+  7,
+  "    ★",
+  "    ▲",
+  "   ▲▲▲",
+  "  ▲▲▲▲▲",
+  " ▲▲▲▲▲▲▲",
+  "▲▲▲▲▲▲▲▲▲",
+  "    |"
+);
 
- for (const treeParts of tree) {
-    console.log(treeParts);
-};
+for (const treeParts of tree) {
+  console.log(treeParts);
+}
