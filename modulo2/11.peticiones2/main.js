@@ -34,3 +34,16 @@ searchBtn.addEventListener("click", sendInfo);
 
 //exercise 4
 
+const searchText = document.querySelector('.searchtext');
+
+function printSearch() {
+    searchText.innerHTML = `"${searchBox.value}"`;
+    localStorage.setItem('searchBox.value', JSON.stringify(searchBox.value));
+}
+
+const saved = JSON.parse(localStorage.getItem('searchBox.value'));
+searchBox.value = saved;
+
+searchText.innerHTML = saved;
+
+searchBox.addEventListener("keyup", printSearch);
