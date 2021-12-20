@@ -147,18 +147,22 @@ for (const treeParts of tree) {
 
 //exercise 7
 
-const wholeTree = tree.splice(
-  0,
-  7,
-  "    ★",
-  "    ▲",
-  "   ▲▲▲",
-  "  ▲▲▲▲▲",
-  " ▲▲▲▲▲▲▲",
-  "▲▲▲▲▲▲▲▲▲",
-  "    |"
-);
+let triangle = '▲';
+const height = 5;
+let star = '★'
 
-for (const treeParts of tree) {
-  console.log(treeParts);
+star = ' '.repeat(height - 1);
+console.log(star + '★')
+for (let i = 0; i < height; i++) {
+  let row = '';
+
+  for (let space = 0; space < height - 1 - i; space++) {
+    row += ' ';
+  }
+  for (let j = 0; j < i * 2 + 1; j++) {
+    row += triangle;
+  }
+  console.log(row);
 }
+let base = ' '.repeat(height - 1);
+console.log(base + "|");
