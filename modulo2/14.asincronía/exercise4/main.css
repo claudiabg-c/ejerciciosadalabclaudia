@@ -1,0 +1,43 @@
+body {
+  margin: 0;
+}
+
+p {
+  padding: 15px;
+}
+
+.hidden {
+  display: none;
+}
+
+.modal {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  height: 100%;
+  width: 100%;
+  padding-top: 200px;
+  background-color: rgba(119, 105, 105, 0.5);
+  overflow: hidden;
+  top: 0;
+}
+
+.modalcontent {
+  background-color: white;
+  width: 500px;
+  height: 300px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  box-shadow: 10px 10px 20px gray;
+}
+
+.expired {
+  display: flex;
+  justify-content: center;
+  color: rgb(75, 69, 69);
+  font-size: larger;
+}

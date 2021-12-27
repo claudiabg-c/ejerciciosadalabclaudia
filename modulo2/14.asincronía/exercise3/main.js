@@ -1,8 +1,9 @@
-'use stricst';
+'use strict';
 
 const seconds = document.querySelector('.seconds');
 const minutes = document.querySelector('.minutes');
 const letterS = document.querySelector('.letters');
+const letterSMin = document.querySelector('.lettersmin');
 const messageSeconds = document.querySelector('.messageseconds');
 const messageMinutes = document.querySelector('.messageminutes');
 
@@ -23,7 +24,7 @@ const incrementMinutes = () => {
     countMin++;
     messageMinutes.classList.remove('hidden');
     minutes.innerHTML = countMin;
-    letterS.innerHTML = 's';
+    letterSMin.innerHTML = 's';
 };
 
 setInterval(incrementSeconds, 1000);

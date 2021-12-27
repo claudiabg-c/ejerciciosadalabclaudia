@@ -4,19 +4,20 @@ const section = document.querySelector('.section');
 
 let grapes = 0;
 let img = 0
+let newYear;
 
 const incrementGrapesCounter = () => {
-    if (grapes < 12) {
-        grapes++;
-    }
+    grapes++;
+    img++;
+    const div = document.createElement('div');
+    section.appendChild(div);
     const grapeCount = document.querySelector('.grapes');
     grapeCount.innerHTML = grapes;
 
-    if (img < 12) {
-        img++;
-        const div = document.createElement('div');
-        section.appendChild(div);
-    };
+    if (grapes === 12) {
+        clearInterval(newYear);
+    }
+
 };
 
-setInterval(incrementGrapesCounter, 1000);
+newYear = setInterval(incrementGrapesCounter, 1000);

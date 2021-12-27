@@ -1,4 +1,4 @@
-'use stricst';
+'use strict';
 
 let counter = 0;
 
