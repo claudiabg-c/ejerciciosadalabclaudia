@@ -1,0 +1,144 @@
+.footer {
+  background-color: $branddarkblue;
+  padding: 0 3.9rem 4.5rem;
+
+  @include desktop {
+    padding: 0 37rem 4.5rem;
+  }
+
+  & .textfooter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+
+    @include tablet {
+      display: flex;
+      flex-direction: row-reverse;
+      align-items: flex-start;
+      justify-content: center;
+    }
+  }
+
+  @include tablet {
+    & .navfooter {
+      display: flex;
+    }
+  }
+
+  & .circle2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(-50%);
+    margin-bottom: 3.7rem;
+
+    @include tablet {
+      margin-bottom: 2.2rem;
+    }
+
+    & .arrow {
+      height: 4.5rem;
+      width: 4.5rem;
+      background-color: white;
+      border-radius: 5rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+      animation-name: animated;
+      animation-duration: 8s;
+      animation-iteration-count: infinite;
+
+      & .footerarrow {
+        height: 2.4rem;
+        width: 2.06rem;
+        padding-top: 1.8rem;
+        padding-bottom: 1.53rem;
+      }
+    }
+  }
+
+  & .menuarticles,
+  .menusmm {
+    text-align: center;
+    padding-bottom: 3rem;
+
+    @include tablet {
+      width: 21rem;
+      text-align: left;
+      margin-right: 3rem;
+    }
+
+    @include desktop {
+      width: 16.1rem;
+      margin-right: 3rem;
+    }
+
+    & .articles,
+    .smm {
+      color: white;
+      text-transform: uppercase;
+      font-size: 1.6rem;
+      font-family: $fontregular;
+      line-height: 3rem;
+    }
+  }
+
+  & .welove {
+    @include tablet {
+      width: 21rem;
+      margin-right: 3rem;
+    }
+  }
+
+  & .copy {
+    font-size: 1.4rem;
+    font-family: $fontregular;
+    line-height: 3rem;
+    text-align: center;
+
+    @include tablet {
+      text-align: left;
+    }
+
+    @include desktop {
+      width: 15.9rem;
+      margin-right: 3.1rem;
+    }
+  }
+
+  & .small {
+    font-family: $fontregular;
+    font-size: 1.4rem;
+    line-height: 3rem;
+    text-align: center;
+    white-space: nowrap;
+    text-transform: lowercase;
+
+    & .heart {
+      color: $brandorange;
+    }
+  }
+}
+
+@keyframes animated {
+  15% {
+    transform: translateY(0.6rem);
+  }
+  30% {
+    transform: translateY(-0.4rem);
+  }
+  45% {
+    transform: translateY(0.6rem);
+  }
+  60% {
+    transform: translateY(-0.2rem);
+  }
+  80% {
+    transform: translateY(0.5rem);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}

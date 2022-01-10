@@ -1,0 +1,88 @@
+.looking {
+  padding: 3rem 1.5rem;
+
+  @include tablet {
+    padding: 3rem 3.9rem;
+  }
+
+  @include desktop {
+    padding: 6rem 27.5rem;
+  }
+
+  & .insomnia {
+    color: $brandlightblue;
+    font-size: 1.4rem;
+    font-family: $fontregular;
+    line-height: 3rem;
+    text-transform: capitalize;
+
+    @include desktop {
+      font-size: 1.6rem;
+    }
+  }
+
+  & .titlelooking {
+    font-family: $fontbold;
+    font-size: 2.4rem;
+    line-height: 3rem;
+    padding-bottom: 1.5rem;
+    text-transform: capitalize;
+
+    @include tablet {
+      font-size: 2.6rem;
+      line-height: 4.5rem;
+      padding-bottom: 3rem;
+    }
+
+    @include desktop {
+      font-size: 3.2rem;
+      line-height: 4.5rem;
+    }
+  }
+
+  & .textlooking {
+    font-family: $fontregular;
+    font-size: 1.8rem;
+    line-height: 3rem;
+    color: #4a4a4a;
+    padding-bottom: 3rem;
+
+    @include tablet {
+      font-size: 2rem;
+    }
+  }
+
+  & .boxgo {
+    height: 4.5rem;
+    width: 7.6rem;
+    border: 0.2rem solid $brandorange;
+    border-radius: 2.25rem;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+
+    &:hover {
+      opacity: 0.75;
+      transform: scale(1.1);
+      transition: opacity ease 5s, transform ease 5s;
+    }
+
+    @include tablet {
+      width: 9.1rem;
+      margin-bottom: 3rem;
+    }
+
+    @include desktop {
+      width: 16rem;
+      margin-bottom: 0;
+    }
+
+    & .gobuttom {
+      color: $brandorange;
+      font-family: $fontregular;
+      font-weight: 500;
+      font-size: 2rem;
+      line-height: 4.5rem;
+    }
+  }
+}
