@@ -2,7 +2,7 @@ import { useState } from "react";
 import "../styles/App.css";
 
 function App() {
-  let [counter, setCounter] = useState(0);
+  const [counter, setCounter] = useState(0);
 
   const handleAdd = () => {
     setCounter(counter + 1);
@@ -13,7 +13,7 @@ function App() {
   };
 
   const handleReset = () => {
-    setCounter((counter = 0));
+    setCounter(0);
   };
 
   return (
