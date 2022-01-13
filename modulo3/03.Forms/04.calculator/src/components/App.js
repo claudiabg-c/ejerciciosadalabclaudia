@@ -31,27 +31,51 @@ const App = () => {
   };
 
   const getText = () => {
-    let text = "";
     if (data.operation === "add") {
-      text = `La suma de ${data.numberA} y ${data.numberB} es ${getTotal()}.`;
+      return (
+        <p>
+          La suma de <strong>{data.numberA}</strong> y{" "}
+          <strong>{data.numberB}</strong> es <strong>{getTotal()}</strong>.
+        </p>
+      );
     } else if (data.operation === "subtract") {
-      text = `La resta de ${data.numberA} y ${data.numberB} es ${getTotal()}.`;
+      return (
+        <p>
+          La resta de <strong>{data.numberA}</strong> y{" "}
+          <strong>{data.numberB}</strong> es <strong>{getTotal()}</strong>.
+        </p>
+      );
     } else if (data.operation === "multiply") {
-      text = `La multiplicación de ${data.numberA} y ${
-        data.numberB
-      } es ${getTotal()}.`;
+      return (
+        <p>
+          La multiplicación de <strong>{data.numberA}</strong> y{" "}
+          <strong>{data.numberB}</strong> es <strong>{getTotal()}</strong>.
+        </p>
+      );
     } else if (data.operation === "divide") {
       if (isNaN(getTotal())) {
-        text = "La división de 0 y 0 no se puede hacer.";
+        return (
+          <p>
+            La división de <strong>{data.numberA}</strong> y{" "}
+            <strong>{data.numberB}</strong> no se puede hacer.
+          </p>
+        );
       } else if (getTotal() === Infinity) {
-        text = `La división de ${data.numberA} y ${data.numberB} da infinito.`;
+        return (
+          <p>
+            La división de <strong>{data.numberA}</strong> y{" "}
+            <strong>{data.numberB}</strong> da infinito.
+          </p>
+        );
       } else {
-        text = `La división de ${data.numberA} y ${
-          data.numberB
-        } es ${getTotal()}.`;
+        return (
+          <p>
+            La división de <strong>{data.numberA}</strong> y{" "}
+            <strong>{data.numberB}</strong> es <strong>{getTotal()}</strong>.
+          </p>
+        );
       }
     }
-    return text;
   };
 
   return (
@@ -82,7 +106,7 @@ const App = () => {
         </label>
         <button>Reset</button>
       </form>
-      <p>{getText()}</p>
+      {getText()}
     </div>
   );
 };
