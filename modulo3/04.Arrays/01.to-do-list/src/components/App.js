@@ -12,11 +12,19 @@ function App() {
     },
   ]);
 
+  const [searchedTasks, setSearchedTasks] = useState("");
+
+  let completedTasks = [];
+  let pendingTasks = [];
+
   for (let index = 0; index < tasks.length; index++) {
     tasks[index].id = `${[index]}`;
+    if (tasks[index].completed === true) {
+      completedTasks.push(tasks[index].completed);
+    } else {
+      pendingTasks.push(tasks[index].completed);
+    }
   }
-
-  console.log(tasks);
 
   const handleClick = (event) => {
     const clickedTask = event.currentTarget.id;
@@ -25,24 +33,40 @@ function App() {
     setTasks([...tasks]);
   };
 
+  const handleInputSearch = (event) => {
+    setSearchedTasks(event.target.value);
+  };
+
   const renderList = () => {
-    return tasks.map((task, index) => {
-      return (
-        <li
-          key={index}
-          id={index}
-          className={`${task.completed}`}
-          onClick={handleClick}
-        >
-          {task.task}
-        </li>
-      );
-    });
+    return tasks
+      .filter((task) => {
+        return task.task.toLowerCase().includes(searchedTasks.toLowerCase());
+      })
+      .map((task, index) => {
+        return (
+          <li
+            key={index}
+            id={index}
+            className={`${task.completed}`}
+            onClick={handleClick}
+          >
+            {task.task}
+          </li>
+        );
+      });
   };
 
   return (
     <div className="App">
+      <input
+        type="text"
+        placeholder="busca aquí tu tarea"
+        onChange={handleInputSearch}
+      />
       <ol>{renderList()}</ol>
+      <p>Tareas totales: {tasks.length} </p>
+      <p>Tareas completadas: {completedTasks.length} </p>
+      <p>Tareas pendientes: {pendingTasks.length} </p>
     </div>
   );
 }
