@@ -41,7 +41,13 @@ const App = () => {
     } else if (operation === "multiply") {
       text = `La multiplicación de ${numberA} y ${numberB} es ${getTotal()}.`;
     } else if (operation === "divide") {
-      text = `La división de ${numberA} y ${numberB} es ${getTotal()}.`;
+      if (isNaN(getTotal())) {
+        text = "La división de 0 y 0 no se puede hacer.";
+      } else if (getTotal() === Infinity) {
+        text = `La división de ${numberA} y ${numberB} da infinito.`;
+      } else {
+        text = `La división de ${numberA} y ${numberB} es ${getTotal()}.`;
+      }
     }
     return text;
   };
