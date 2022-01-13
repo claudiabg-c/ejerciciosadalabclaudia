@@ -2,51 +2,53 @@ import "../styles/App.scss";
 import { useState } from "react";
 
 const App = () => {
-  const [operation, setOperation] = useState("");
-  const [numberA, setNumberA] = useState(0);
-  const [numberB, setNumberB] = useState(0);
+  const [data, setData] = useState({
+    operation: "",
+    numberA: 0,
+    numberB: 0,
+  });
 
-  const handleNumberA = (ev) => {
-    setNumberA(ev.target.value);
-  };
-
-  const handleNumberB = (ev) => {
-    setNumberB(ev.target.value);
-  };
-
-  const handleOperation = (ev) => {
-    setOperation(ev.target.value);
+  const handleDataInput = (ev) => {
+    const propertyData = ev.target.name;
+    setData({
+      ...data,
+      [propertyData]: ev.target.value,
+    });
   };
 
   const getTotal = () => {
     let total = 0;
-    if (operation === "add") {
-      total = parseInt(numberA) + parseInt(numberB);
-    } else if (operation === "subtract") {
-      total = parseInt(numberA) - parseInt(numberB);
-    } else if (operation === "multiply") {
-      total = parseInt(numberA) * parseInt(numberB);
-    } else if (operation === "divide") {
-      total = parseInt(numberA) / parseInt(numberB);
+    if (data.operation === "add") {
+      total = parseInt(data.numberA) + parseInt(data.numberB);
+    } else if (data.operation === "subtract") {
+      total = parseInt(data.numberA) - parseInt(data.numberB);
+    } else if (data.operation === "multiply") {
+      total = parseInt(data.numberA) * parseInt(data.numberB);
+    } else if (data.operation === "divide") {
+      total = parseInt(data.numberA) / parseInt(data.numberB);
     }
     return total;
   };
 
   const getText = () => {
     let text = "";
-    if (operation === "add") {
-      text = `La suma de ${numberA} y ${numberB} es ${getTotal()}.`;
-    } else if (operation === "subtract") {
-      text = `La resta de ${numberA} y ${numberB} es ${getTotal()}.`;
-    } else if (operation === "multiply") {
-      text = `La multiplicación de ${numberA} y ${numberB} es ${getTotal()}.`;
-    } else if (operation === "divide") {
+    if (data.operation === "add") {
+      text = `La suma de ${data.numberA} y ${data.numberB} es ${getTotal()}.`;
+    } else if (data.operation === "subtract") {
+      text = `La resta de ${data.numberA} y ${data.numberB} es ${getTotal()}.`;
+    } else if (data.operation === "multiply") {
+      text = `La multiplicación de ${data.numberA} y ${
+        data.numberB
+      } es ${getTotal()}.`;
+    } else if (data.operation === "divide") {
       if (isNaN(getTotal())) {
         text = "La división de 0 y 0 no se puede hacer.";
       } else if (getTotal() === Infinity) {
-        text = `La división de ${numberA} y ${numberB} da infinito.`;
+        text = `La división de ${data.numberA} y ${data.numberB} da infinito.`;
       } else {
-        text = `La división de ${numberA} y ${numberB} es ${getTotal()}.`;
+        text = `La división de ${data.numberA} y ${
+          data.numberB
+        } es ${getTotal()}.`;
       }
     }
     return text;
@@ -60,7 +62,7 @@ const App = () => {
           name="operation"
           id="operation"
           defaultValue="select"
-          onChange={handleOperation}
+          onChange={handleDataInput}
         >
           <option value="select" disabled>
             Selecciona una opción
@@ -72,12 +74,13 @@ const App = () => {
         </select>
         <label>
           Escribe un número:
-          <input type="number" name="name" onChange={handleNumberA} />
+          <input type="number" name="numberA" onChange={handleDataInput} />
         </label>
         <label>
           Escribe otro número:
-          <input type="number" name="email" onChange={handleNumberB} />
+          <input type="number" name="numberB" onChange={handleDataInput} />
         </label>
+        <button>Reset</button>
       </form>
       <p>{getText()}</p>
     </div>
