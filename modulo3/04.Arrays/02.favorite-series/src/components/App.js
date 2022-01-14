@@ -39,7 +39,7 @@ const App = () => {
   // Funciones de renderizado
 
   const renderSeries = () => {
-    if (searchIsFavorite === true) {
+    if (searchIsFavorite) {
       return favorites.map((favorite) => {
         return (
           <li key={favorite.id} id={favorite.id} onClick={handleFavorite}>
