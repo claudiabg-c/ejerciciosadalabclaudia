@@ -47,7 +47,7 @@ function App() {
           <li
             key={index}
             id={index}
-            className={`${task.completed}`}
+            className={task.completed ? "completed" : null}
             onClick={handleClick}
           >
             {task.task}
