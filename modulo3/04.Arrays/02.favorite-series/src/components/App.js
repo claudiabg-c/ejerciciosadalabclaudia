@@ -39,22 +39,33 @@ const App = () => {
   // Funciones de renderizado
 
   const renderSeries = () => {
-    return (
-      series
-        // Filtramos por nombre
-        .filter((serie) => {
-          return serie.name.toLowerCase().includes(searchName.toLowerCase());
-        })
-        // Mapeamos
-        .map((serie) => {
-          return (
-            <li key={serie.id} id={serie.id} onClick={handleFavorite}>
-              <h2>{serie.name}</h2>
-              <p>Es mi serie favorita: {serie.isFavorite ? "Sí" : "No"}</p>
-            </li>
-          );
-        })
-    );
+    if (searchIsFavorite === true) {
+      return favorites.map((favorite) => {
+        return (
+          <li key={favorite.id} id={favorite.id} onClick={handleFavorite}>
+            <h2>{favorite.name}</h2>
+            <p>Es mi serie favorita: {favorite.isFavorite ? "Sí" : "No"}</p>
+          </li>
+        );
+      });
+    } else {
+      return (
+        series
+          // Filtramos por nombre
+          .filter((serie) => {
+            return serie.name.toLowerCase().includes(searchName.toLowerCase());
+          })
+          // Mapeamos
+          .map((serie) => {
+            return (
+              <li key={serie.id} id={serie.id} onClick={handleFavorite}>
+                <h2>{serie.name}</h2>
+                <p>Es mi serie favorita: {serie.isFavorite ? "Sí" : "No"}</p>
+              </li>
+            );
+          })
+      );
+    }
   };
 
   return (
