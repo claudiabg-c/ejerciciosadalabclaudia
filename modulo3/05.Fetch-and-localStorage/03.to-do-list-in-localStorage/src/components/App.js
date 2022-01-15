@@ -23,7 +23,7 @@ function App() {
   let completedTasks = [];
   let pendingTasks = [];
 
-  const addId = tasks.map((task, index) => {
+  const addId = newTasks.map((task, index) => {
     return (task.id = `${index}`);
   });
 
@@ -36,7 +36,7 @@ function App() {
   });
 
   const handleClickFav = (event) => {
-    const clickedTask = event.currentTarget.id;
+    const clickedTask = event.target.id;
     const foundTask = newTasks.find((task) => task.id === clickedTask);
     foundTask.completed = !foundTask.completed;
     setTasks([...newTasks]);
@@ -54,12 +54,19 @@ function App() {
     if (newTaskInput !== "") {
       const newTask = {
         task: newTaskInput.charAt(0).toUpperCase() + newTaskInput.slice(1),
-        id: `${newTasks.length}`,
         completed: false,
       };
       setNewTasks([...newTasks, newTask]);
     }
     setNewTaskInput("");
+  };
+
+  const handleDeleteBtn = (event) => {
+    const clickedTask = event.currentTarget.id;
+    const taskToDelete = newTasks.find((task) => task.id === clickedTask);
+    const findClickedTask = newTasks.indexOf(taskToDelete);
+    const notDeletedTasks = newTasks.splice(findClickedTask, 1);
+    setNewTasks([...newTasks]);
   };
 
   useEffect(() => {
@@ -74,13 +81,18 @@ function App() {
       })
       .map((task, index) => {
         return (
-          <li
-            key={index}
-            id={index}
-            className={task.completed ? "completed" : null}
-            onClick={handleClickFav}
-          >
-            {task.task}
+          <li key={index}>
+            <p
+              id={index}
+              className={task.completed ? "completed" : null}
+              onClick={handleClickFav}
+            >
+              {task.task}
+            </p>
+
+            <button onClick={handleDeleteBtn} id={index}>
+              Borrar
+            </button>
           </li>
         );
       });
