@@ -1,16 +1,22 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "../styles/App.scss";
+import ls from "../services/localStorage";
 
 function App() {
-  const [tasks, setTasks] = useState([
-    { task: "Comprar harina, jamón y pan rallado", completed: true },
-    { task: "Hacer croquetas ricas", completed: true },
-    { task: "Ir a la puerta de un gimnasio", completed: false },
-    {
-      task: "Comerme las croquetas mirando a la gente que entra en el gimnasio",
-      completed: false,
-    },
-  ]);
+  const [tasks, setTasks] = useState(
+    ls.get("tasks", [
+      {
+        task: "Comprar harina, jamón y pan rallado",
+        completed: true,
+      },
+      { task: "Hacer croquetas ricas", completed: true },
+      { task: "Ir a la puerta de un gimnasio", completed: false },
+      {
+        task: "Comerme las croquetas mirando a la gente que entra en el gimnasio",
+        completed: false,
+      },
+    ])
+  );
 
   const [searchedTasks, setSearchedTasks] = useState("");
 
@@ -28,6 +34,10 @@ function App() {
       return pendingTasks.push(task);
     }
   });
+
+  useEffect(() => {
+    ls.set("tasks", tasks);
+  }, [tasks]);
 
   const handleClick = (event) => {
     const clickedTask = event.currentTarget.id;
