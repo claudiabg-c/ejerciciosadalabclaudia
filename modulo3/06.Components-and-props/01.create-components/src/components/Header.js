@@ -3,12 +3,10 @@ import Menu from "./Menu";
 
 const Header = () => {
   return (
-    <div>
-      <header className="header">
-        <Logo />
-        <Menu />
-      </header>
-    </div>
+    <header className="header">
+      <Logo />
+      <Menu />
+    </header>
   );
 };
 
