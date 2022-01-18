@@ -14,3 +14,9 @@
   text-align: center;
   text-transform: capitalize;
 }
+
+@media (min-width: 768px) {
+  .text {
+    font-size: 4rem;
+  }
+}
