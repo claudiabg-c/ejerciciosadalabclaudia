@@ -1,5 +1,4 @@
 import "../styles/App.scss";
-import "../styles/media.scss";
 import Header from "./Header";
 import Main from "./Main";
 

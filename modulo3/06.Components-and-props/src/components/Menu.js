@@ -1,4 +1,5 @@
 import Link from "./Link";
+import "../styles/Menu.scss";
 
 const Menu = () => {
   return (
