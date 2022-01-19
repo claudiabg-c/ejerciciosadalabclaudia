@@ -1,0 +1,24 @@
+.tooltip {
+  cursor: help;
+  color: #4bddc9;
+  width: fit-content;
+}
+
+.tooltiptext {
+  visibility: hidden;
+  width: 400px;
+  height: 100px;
+  background-color: white;
+  color: black;
+  text-align: center;
+  border-radius: 13px;
+  padding: 16px;
+  position: absolute;
+  margin-left: 100px;
+  z-index: 1;
+  box-shadow: 0px 0px 20px #4bddc9;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
