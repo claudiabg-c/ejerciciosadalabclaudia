@@ -9,12 +9,12 @@ const App = () => {
   const [paymentType, setPaymentType] = useState("");
   const [legalTerms, setLegalTerms] = useState(false);
 
-  const handleName = (value) => {
-    setName(value);
-  };
-
-  const handleEmail = (value) => {
-    setEmail(value);
+  const handleChangeForm = (id, value) => {
+    if (id === "name") {
+      setName(value);
+    } else if (id === "email") {
+      setEmail(value);
+    }
   };
 
   const handleRegion = (value) => {
@@ -54,14 +54,13 @@ const App = () => {
     <div>
       <Form
         name={name}
-        handleName={handleName}
         email={email}
-        handleEmail={handleEmail}
         region={region}
-        handleRegion={handleRegion}
         paymentType={paymentType}
-        handlePaymentType={handlePaymentType}
         legalTerms={legalTerms}
+        handleChangeForm={handleChangeForm}
+        handleRegion={handleRegion}
+        handlePaymentType={handlePaymentType}
         handleLegalTerms={handleLegalTerms}
         disabled={isValidForm() === false}
         click={handleResetButton}

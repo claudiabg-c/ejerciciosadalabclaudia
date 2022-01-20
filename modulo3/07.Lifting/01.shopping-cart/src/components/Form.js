@@ -22,7 +22,7 @@ const Form = (props) => {
           type="text"
           placeholder="María García"
           value={props.name}
-          handleInput={props.handleName}
+          handleInput={props.handleChangeForm}
         />
         <InputGroupText
           id="email"
@@ -30,7 +30,7 @@ const Form = (props) => {
           type="email"
           placeholder="mariagarcia@gmail.com"
           value={props.email}
-          handleInput={props.handleEmail}
+          handleInput={props.handleChangeForm}
         />
         <InputGroupSelect
           id="region"

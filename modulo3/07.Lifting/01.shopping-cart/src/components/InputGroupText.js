@@ -1,6 +1,6 @@
 const InputGroupText = (props) => {
   const handleInputChange = (ev) => {
-    props.handleInput(ev.target.value);
+    props.handleInput(props.id, ev.target.value);
   };
 
   return (
