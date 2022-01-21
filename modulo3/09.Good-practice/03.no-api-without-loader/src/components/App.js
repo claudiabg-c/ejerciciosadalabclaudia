@@ -1,13 +1,17 @@
 import { useEffect, useState } from "react";
 import callToApi from "../services/api";
+import Loader from "./Loader";
 
 function App() {
   const [searchSerie, setSearchSerie] = useState("");
   const [serie, setSerie] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
+    setIsLoading(true);
     callToApi(searchSerie).then((resultApi) => {
       setSerie(resultApi);
+      setIsLoading(false);
     });
   }, [searchSerie]);
 
@@ -25,6 +29,7 @@ function App() {
     <div className="App">
       <input type="text" value={searchSerie} onChange={handleSearchInput} />
       <ul>{renderSeries()}</ul>
+      <Loader isLoading={isLoading} />
     </div>
   );
 }
