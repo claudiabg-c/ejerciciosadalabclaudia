@@ -8,32 +8,25 @@ import SettingsText from "./SettingsText";
 const App = () => {
   return (
     <div>
+      <Header />
       <Switch>
-        <Route exact path="/">
-          <Header />
-        </Route>
+        <Route exact path="/"></Route>
         <Route path="/overview">
-          <Header />
           <Content />
         </Route>
         <Route path="/repositories">
-          <Header />
           <Content />
         </Route>
         <Route path="/packages">
-          <Header />
           <Content />
         </Route>
         <Route path="/people">
-          <Header />
           <Content />
         </Route>
         <Route path="/teams">
-          <Header />
           <Content />
         </Route>
         <Route path={["/settings", "/projects"]}>
-          <Header />
           <SettingsText />
         </Route>
         <Route>
