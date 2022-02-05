@@ -67,3 +67,31 @@ app.get("/books/3-5", (req, res) => {
   const books3To5 = query.all();
   res.json(books3To5);
 });
+
+app.patch("/books/updatetitle/:id", (req, res) => {
+  const query = db.prepare("UPDATE books SET title = ? WHERE id = ?");
+  const update = query.run(req.body.title, req.params.id);
+  res.json(update);
+});
+
+app.patch("/books/updatestock/:stock", (req, res) => {
+  const query = db.prepare("UPDATE books SET stock = ? WHERE format = 'Papel'");
+  const update = query.run(req.params.stock);
+  res.json(update);
+});
+
+app.put("/books/updatebook/:id", (req, res) => {
+  const query = db.prepare(
+    "UPDATE books SET title = ?, author = ?, synopsis = ?, price = ?, stock = ?, format = ? WHERE id = ?"
+  );
+  const update = query.run(
+    req.body.title,
+    req.body.author,
+    req.body.synopsis,
+    req.body.price,
+    req.body.stock,
+    req.body.format,
+    req.params.id
+  );
+  res.json(update);
+});
