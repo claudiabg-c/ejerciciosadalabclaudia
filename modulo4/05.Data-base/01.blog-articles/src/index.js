@@ -18,25 +18,25 @@ app.listen(serverPort, () => {
   console.log(`App listening at http://localhost:${serverPort}`);
 });
 
-const db = new Database("./articles.db", {
+const db = new Database("./database.db", {
   verbose: console.log,
 });
 
 app.get("/articles", (req, res) => {
-  const query = db.prepare("SELECT * FROM articles");
+  const query = db.prepare("SELECT * FROM database");
   const articles = query.all();
   res.json(articles);
 });
 
 app.get("/article/:id", (req, res) => {
-  const query = db.prepare("SELECT * FROM articles WHERE id = ?");
+  const query = db.prepare("SELECT * FROM database WHERE id = ?");
   const selectedArticle = query.all(req.params.id);
   res.json(selectedArticle);
 });
 
 app.get("/article", (req, res) => {
   const query = db.prepare(
-    `SELECT * FROM articles WHERE title LIKE '%${req.query.titleSearch}%'`
+    `SELECT * FROM database WHERE title LIKE '%${req.query.titleSearch}%'`
   );
   const selectedTitle = query.all();
   res.json(selectedTitle);
