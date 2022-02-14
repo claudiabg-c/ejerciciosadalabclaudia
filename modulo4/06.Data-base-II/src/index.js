@@ -95,3 +95,22 @@ app.put("/books/updatebook/:id", (req, res) => {
   );
   res.json(update);
 });
+
+app.post("/books/addbook", (req, res) => {
+  const title = req.body.title;
+  const author = req.body.author;
+  const synopsis = req.body.synopsis || "";
+  const price = req.body.price || 0;
+  const stock = req.body.stock || "Si";
+  const format = req.body.format || "Digital";
+
+  if (req.body.title && req.body.author) {
+    const query = db.prepare(
+      "INSERT INTO books (title, author, synopsis, price, stock, format) VALUES (?, ?, ?, ?, ?, ?);"
+    );
+    const update = query.run(title, author, synopsis, price, stock, format);
+    res.json(update);
+  } else {
+    res.json({ result: "Invalid input data" });
+  }
+});
